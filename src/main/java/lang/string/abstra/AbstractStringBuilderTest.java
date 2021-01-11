@@ -1,12 +1,15 @@
 package lang.string.abstra;
 
+import org.junit.Test;
+
 /**
  * @autor qiuchunhui
  * @Description
  * @since 2021/1/10
  */
 public class AbstractStringBuilderTest {
-  public static void main(String[] args) {
+  @Test
+  public void setLengthTest() {
     StringBuilder sb = new StringBuilder();
     sb.append("hello");
     System.out.println(sb.toString()); // hello
@@ -23,5 +26,18 @@ public class AbstractStringBuilderTest {
     sb.setLength(77);
     System.out.println("size:" + sb.length()); // 77
     System.out.println("capacity" + sb.capacity()); // 77
+  }
+
+  @Test
+  public void capacityTest() {
+    StringBuilder builder = new StringBuilder("hello");
+    System.out.println("size:" + builder.length()); // 5
+    System.out.println("capacity" + builder.capacity()); // 16
+    builder.append("world");
+    System.out.println("size:" + builder.length()); // 5
+    System.out.println("capacity" + builder.capacity()); // 16
+    builder.append("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+    System.out.println("size:" + builder.length()); // 5
+    System.out.println("capacity" + builder.capacity()); // 16
   }
 }
